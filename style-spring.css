@@ -1,19 +1,39 @@
 /* ========================================
    Wedding Invitation — Тойға шақыру
-   Elegant & Modern Design
+   Warm Classic — Cream, Gold & Candlelight
+   Inspired by calligraphy invitation photo
    ======================================== */
 
 :root {
-  --color-gold: #B8860B;
-  --color-gold-light: #D4A843;
-  --color-gold-dark: #8E6F3E;
-  --color-cream: #F5F0EB;
-  --color-cream-dark: #E8DDD3;
-  --color-dark: #1a1a2e;
-  --color-dark-soft: #2C3E50;
-  --color-text: #3a3a3a;
-  --color-text-light: #6b6b6b;
+  /* Bright warm gold tones */
+  --color-gold: #D4B95E;
+  --color-gold-light: #E8D07A;
+  --color-gold-dark: #BFA04A;
+  --color-gold-rich: #E0C04A;
+
+  /* Lighter warm brown tones */
+  --color-brown: #A08060;
+  --color-brown-light: #C4A57C;
+  --color-brown-dark: #5C412E;
+  --color-ink: #3E2A1C;
+
+  /* Brighter cream / ivory tones */
+  --color-cream: #FFFAF4;
+  --color-cream-warm: #FFF5E8;
+  --color-cream-dark: #F0E6D8;
+  --color-ivory: #FFFDF8;
+
+  /* Brighter candle glow accent */
+  --color-amber: #FFE8B8;
+  --color-amber-light: #FFF4DA;
+
+  /* Lighter text & base */
+  --color-dark: #3E2A1C;
+  --color-dark-soft: #5C4636;
+  --color-text: #4E3C30;
+  --color-text-light: #9A8A7C;
   --color-white: #ffffff;
+
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -58,7 +78,8 @@ body {
 }
 
 /* ========================================
-   Floating Petals
+   Floating Gold Particles
+   Warm candlelight sparkles
    ======================================== */
 
 .petals-container {
@@ -75,12 +96,28 @@ body {
 .petal {
   position: absolute;
   top: -20px;
-  width: 12px;
-  height: 12px;
-  background: radial-gradient(ellipse, var(--color-gold-light), var(--color-gold));
-  border-radius: 50% 0 50% 0;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, var(--color-gold-light), var(--color-gold));
+  border-radius: 50%;
   opacity: 0.5;
   animation: fall linear infinite;
+}
+
+/* Slightly larger warm particles */
+.petal:nth-child(odd) {
+  background: radial-gradient(circle, var(--color-amber), var(--color-gold));
+  width: 8px;
+  height: 8px;
+  opacity: 0.35;
+}
+
+/* Tiny sparkles */
+.petal:nth-child(3n) {
+  background: radial-gradient(circle, #FFF8E0, var(--color-gold-light));
+  width: 4px;
+  height: 4px;
+  opacity: 0.6;
 }
 
 @keyframes fall {
@@ -91,17 +128,20 @@ body {
   10% {
     opacity: 0.5;
   }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(30px);
+  }
   90% {
-    opacity: 0.3;
+    opacity: 0.2;
   }
   100% {
-    transform: translateY(110vh) rotate(720deg) translateX(100px);
+    transform: translateY(110vh) rotate(360deg) translateX(-20px);
     opacity: 0;
   }
 }
 
 /* ========================================
-   Hero Section
+   Hero Section — Warm Calligraphic
    ======================================== */
 
 .hero {
@@ -111,10 +151,18 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background:
+    linear-gradient(160deg,
+      #5C412E 0%,
+      #6E5240 25%,
+      #7D6350 50%,
+      #6E5240 75%,
+      #5C412E 100%
+    );
   overflow: hidden;
 }
 
+/* Bright warm candlelight glow */
 .hero::before {
   content: '';
   position: absolute;
@@ -123,16 +171,20 @@ body {
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(212, 168, 67, 0.1) 0%, transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(184, 134, 11, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse 350px 350px at 50% 40%, rgba(212, 185, 94, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 250px 250px at 20% 20%, rgba(255, 232, 184, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 250px 250px at 80% 80%, rgba(255, 232, 184, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 200px 200px at 75% 15%, rgba(224, 192, 74, 0.08) 0%, transparent 45%);
   z-index: 1;
 }
 
+/* Subtle paper texture overlay */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='rgba(184,134,11,0.06)' stroke-width='0.5'/%3E%3C/svg%3E");
+  background:
+    url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.015'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='0.5' fill='rgba(201,168,76,0.04)'/%3E%3C/svg%3E");
   z-index: 1;
 }
 
@@ -144,11 +196,11 @@ body {
 
 .hero-subtitle {
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 300;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   text-transform: uppercase;
-  color: var(--color-gold-light);
+  color: var(--color-amber);
   margin-bottom: 20px;
 }
 
@@ -156,10 +208,11 @@ body {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 7vw, 5rem);
   font-weight: 300;
-  color: var(--color-white);
+  color: var(--color-cream);
   letter-spacing: 2px;
   margin-bottom: 24px;
   line-height: 1.2;
+  font-style: italic;
 }
 
 .hero-divider {
@@ -206,6 +259,7 @@ body {
   font-weight: 400;
   color: var(--color-white);
   letter-spacing: 1px;
+  font-style: italic;
 }
 
 .ampersand {
@@ -216,13 +270,35 @@ body {
   color: var(--color-gold);
 }
 
+.hero-details {
+  margin-bottom: 48px;
+}
+
 .hero-date {
   font-family: var(--font-sans);
-  font-size: 1.1rem;
-  font-weight: 300;
+  font-size: 1.15rem;
+  font-weight: 400;
   letter-spacing: 3px;
   color: var(--color-gold-light);
-  margin-bottom: 48px;
+  margin-bottom: 6px;
+}
+
+.hero-venue {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--color-amber);
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
+.hero-address {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: var(--color-brown-light);
 }
 
 .scroll-btn {
@@ -254,46 +330,23 @@ body {
 }
 
 /* ========================================
-   Section Titles
-   ======================================== */
-
-.section-title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 400;
-  text-align: center;
-  color: var(--color-dark);
-  margin-bottom: 48px;
-  position: relative;
-  letter-spacing: 1px;
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: var(--color-gold);
-  margin: 16px auto 0;
-}
-
-/* ========================================
    Wedding Photo Section
    ======================================== */
 
 .photo-section {
   padding: 0;
-  background: var(--color-dark);
+  background: var(--color-brown-dark);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  position: relative;
 }
 
 .photo-frame {
   position: relative;
   width: 100%;
-  max-height: 70vh;
+  max-height: 75vh;
   overflow: hidden;
 }
 
@@ -301,25 +354,25 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 70vh;
+  max-height: 75vh;
   object-fit: cover;
-  object-position: center;
-  filter: brightness(0.95) contrast(1.02);
+  object-position: center 30%;
+  filter: brightness(1.02) contrast(1.01) saturate(1.08);
 }
 
-/* Subtle gold vignette overlay */
+/* Soft warm vignette */
 .photo-frame::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, rgba(26, 26, 46, 0.2) 0%, transparent 20%),
-    linear-gradient(to top, rgba(26, 26, 46, 0.3) 0%, transparent 25%),
-    radial-gradient(ellipse at center, transparent 50%, rgba(26, 26, 46, 0.15) 100%);
+    linear-gradient(to bottom, rgba(92, 65, 46, 0.18) 0%, transparent 12%),
+    linear-gradient(to top, rgba(92, 65, 46, 0.22) 0%, transparent 16%),
+    radial-gradient(ellipse at center, transparent 55%, rgba(92, 65, 46, 0.08) 100%);
   pointer-events: none;
 }
 
-/* Fallback placeholder — shown when image fails to load */
+/* Fallback placeholder */
 .photo-fallback {
   display: none;
   flex-direction: column;
@@ -333,14 +386,14 @@ body {
 .photo-fallback-icon {
   font-size: 3.5rem;
   margin-bottom: 16px;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .photo-fallback p {
   font-family: var(--font-sans);
   font-size: 0.9rem;
   font-weight: 300;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 .photo-frame.no-image .photo-main {
@@ -356,12 +409,61 @@ body {
 }
 
 /* ========================================
+   Section Titles
+   ======================================== */
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-dark);
+  margin-bottom: 48px;
+  position: relative;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+/* Gold ornamental line with center dot */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 2px;
+  background:
+    radial-gradient(circle 3px at 50% 50%, var(--color-gold) 2px, transparent 2px),
+    linear-gradient(90deg,
+      transparent,
+      var(--color-gold-light) 20%,
+      var(--color-gold) 45%,
+      transparent 49%,
+      transparent 51%,
+      var(--color-gold) 55%,
+      var(--color-gold-light) 80%,
+      transparent
+    );
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+/* ========================================
    Countdown Section
    ======================================== */
 
 .countdown-section {
   padding: 80px 0;
-  background: var(--color-white);
+  background: var(--color-ivory);
+  position: relative;
+}
+
+.countdown-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-cream-dark), transparent);
 }
 
 .countdown {
@@ -378,9 +480,10 @@ body {
   align-items: center;
   min-width: 90px;
   padding: 20px 16px;
-  background: var(--color-cream);
+  background: linear-gradient(160deg, var(--color-cream), var(--color-cream-warm));
   border-radius: 12px;
   border: 1px solid var(--color-cream-dark);
+  box-shadow: 0 4px 16px rgba(92, 65, 46, 0.06);
 }
 
 .countdown-number {
@@ -431,11 +534,31 @@ body {
   text-align: center;
   border: 1px solid var(--color-cream-dark);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 12px rgba(92, 65, 46, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Warm gold top accent */
+.detail-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--color-gold-light),
+    var(--color-gold),
+    var(--color-gold-light),
+    transparent
+  );
 }
 
 .detail-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(92, 65, 46, 0.08);
 }
 
 .detail-icon {
@@ -449,6 +572,7 @@ body {
   font-weight: 500;
   color: var(--color-dark);
   margin-bottom: 12px;
+  font-style: italic;
 }
 
 .detail-text {
@@ -472,7 +596,7 @@ body {
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 1px;
-  color: var(--color-white);
+  color: var(--color-dark);
   background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
   border-radius: 8px;
   text-decoration: none;
@@ -481,7 +605,7 @@ body {
 
 .map-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(184, 134, 11, 0.3);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
 }
 
 /* ========================================
@@ -490,7 +614,7 @@ body {
 
 .story-section {
   padding: 80px 0;
-  background: var(--color-white);
+  background: var(--color-ivory);
 }
 
 .timeline {
@@ -507,7 +631,12 @@ body {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--color-gold-light), var(--color-gold), var(--color-gold-light));
+  background: linear-gradient(to bottom,
+    var(--color-gold-light),
+    var(--color-gold),
+    var(--color-brown-light),
+    var(--color-gold)
+  );
 }
 
 .timeline-item {
@@ -519,16 +648,17 @@ body {
   margin-bottom: 0;
 }
 
+/* Gold ring-shaped timeline dots */
 .timeline-dot {
   position: absolute;
   left: -34px;
   top: 4px;
-  width: 14px;
-  height: 14px;
-  background: var(--color-gold);
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at 40% 40%, var(--color-gold-light), var(--color-gold-dark));
   border-radius: 50%;
-  border: 3px solid var(--color-white);
-  box-shadow: 0 0 0 2px var(--color-gold);
+  border: 3px solid var(--color-ivory);
+  box-shadow: 0 0 0 2px var(--color-gold), 0 2px 8px rgba(212, 185, 94, 0.25);
 }
 
 .timeline-content {
@@ -544,6 +674,7 @@ body {
   font-weight: 600;
   color: var(--color-gold-dark);
   margin-bottom: 8px;
+  font-style: italic;
 }
 
 .timeline-text {
@@ -584,7 +715,7 @@ body {
 .gallery-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--color-cream-dark), var(--color-white));
+  background: linear-gradient(135deg, var(--color-cream-dark), var(--color-ivory));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -596,8 +727,8 @@ body {
 }
 
 .gallery-placeholder:hover {
-  border-color: var(--color-gold);
-  background: linear-gradient(135deg, var(--color-cream), var(--color-white));
+  border-color: var(--color-gold-light);
+  background: linear-gradient(135deg, var(--color-cream-warm), var(--color-ivory));
 }
 
 .gallery-placeholder span {
@@ -627,7 +758,7 @@ body {
 
 .dresscode-section {
   padding: 80px 0;
-  background: var(--color-white);
+  background: var(--color-ivory);
 }
 
 .dresscode-text {
@@ -651,31 +782,64 @@ body {
   height: 56px;
   border-radius: 50%;
   border: 3px solid var(--color-white);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(92, 65, 46, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
 }
 
 .color-swatch:hover {
   transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(92, 65, 46, 0.12);
 }
 
 /* ========================================
-   RSVP Section
+   RSVP Section — Warm Dark
    ======================================== */
 
 .rsvp-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background:
+    linear-gradient(160deg,
+      #4A3628 0%,
+      #5C412E 25%,
+      #6E5240 50%,
+      #5C412E 75%,
+      #4A3628 100%
+    );
   color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Brighter warm candlelight glow in RSVP */
+.rsvp-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 300px 300px at 50% 30%, rgba(212, 185, 94, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 200px 200px at 15% 60%, rgba(255, 232, 184, 0.08) 0%, transparent 45%),
+    radial-gradient(ellipse 200px 200px at 85% 70%, rgba(255, 232, 184, 0.06) 0%, transparent 45%);
 }
 
 .rsvp-section .section-title {
-  color: var(--color-white);
+  color: var(--color-cream);
+  position: relative;
 }
 
 .rsvp-section .section-title::after {
-  background: var(--color-gold);
+  background:
+    radial-gradient(circle 3px at 50% 50%, var(--color-gold) 2px, transparent 2px),
+    linear-gradient(90deg,
+      transparent,
+      var(--color-gold-light) 20%,
+      var(--color-gold) 45%,
+      transparent 49%,
+      transparent 51%,
+      var(--color-gold) 55%,
+      var(--color-gold-light) 80%,
+      transparent
+    );
 }
 
 .rsvp-subtitle {
@@ -685,11 +849,13 @@ body {
   color: var(--color-gold-light);
   margin-top: -32px;
   margin-bottom: 40px;
+  position: relative;
 }
 
 .rsvp-form {
   max-width: 480px;
   margin: 0 auto;
+  position: relative;
 }
 
 .form-group {
@@ -704,37 +870,38 @@ body {
   font-family: var(--font-sans);
   font-size: 0.95rem;
   font-weight: 300;
-  color: var(--color-white);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-cream);
+  background: rgba(255, 250, 244, 0.08);
+  border: 1px solid rgba(212, 185, 94, 0.25);
   border-radius: 10px;
   outline: none;
-  transition: border-color 0.3s ease, background 0.3s ease;
+  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 250, 244, 0.4);
 }
 
 .form-group select {
   appearance: none;
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(212,185,94,0.5)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
 }
 
 .form-group select option {
   background: var(--color-dark);
-  color: var(--color-white);
+  color: var(--color-cream);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--color-gold);
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 250, 244, 0.12);
+  box-shadow: 0 0 0 3px rgba(212, 185, 94, 0.14);
 }
 
 .form-group textarea {
@@ -757,11 +924,12 @@ body {
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .rsvp-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(184, 134, 11, 0.3);
+  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.3);
 }
 
 .rsvp-btn:active {
@@ -771,6 +939,7 @@ body {
 .rsvp-success {
   text-align: center;
   padding: 40px 20px;
+  position: relative;
 }
 
 .success-icon {
@@ -780,8 +949,8 @@ body {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--color-gold);
-  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  color: var(--color-dark);
   font-size: 1.8rem;
   margin-bottom: 16px;
   animation: scaleIn 0.5s ease;
@@ -797,7 +966,8 @@ body {
   font-size: 1.8rem;
   font-weight: 400;
   margin-bottom: 8px;
-  color: var(--color-white);
+  color: var(--color-cream);
+  font-style: italic;
 }
 
 .rsvp-success p {
@@ -812,17 +982,38 @@ body {
 
 .footer {
   padding: 60px 0;
-  background: var(--color-dark);
+  background: var(--color-brown-dark);
   text-align: center;
   color: var(--color-white);
+  position: relative;
+}
+
+/* Gold ribbon at top of footer */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--color-gold-light),
+    var(--color-gold),
+    var(--color-gold-rich),
+    var(--color-gold),
+    var(--color-gold-light),
+    transparent
+  );
 }
 
 .footer-names {
   font-family: var(--font-serif);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 400;
-  color: var(--color-white);
+  color: var(--color-cream);
   margin-bottom: 8px;
+  font-style: italic;
 }
 
 .footer-date {
