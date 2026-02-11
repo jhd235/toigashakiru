@@ -191,7 +191,7 @@ body {
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  font-size: clamp(2.8rem, 7vw, 5rem);
   font-weight: 300;
   color: var(--color-white);
   letter-spacing: 3px;
@@ -217,7 +217,7 @@ body {
 
 .divider-icon {
   color: var(--color-gold);
-  font-size: 1rem;
+  font-size: 1.2rem;
   animation: pulse 3s ease-in-out infinite;
 }
 
@@ -237,7 +237,7 @@ body {
 
 .groom, .bride {
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
   font-weight: 400;
   color: var(--color-white);
   letter-spacing: 2px;
@@ -246,7 +246,7 @@ body {
 
 .ampersand {
   font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
   font-weight: 300;
   font-style: italic;
   color: var(--color-gold);
@@ -259,7 +259,7 @@ body {
 
 .hero-date {
   font-family: var(--font-sans);
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 400;
   letter-spacing: 4px;
   color: var(--color-gold-light);
@@ -268,7 +268,7 @@ body {
 
 .hero-venue {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-weight: 300;
   letter-spacing: 1px;
   color: var(--color-violet-pale);
@@ -278,7 +278,7 @@ body {
 
 .hero-address {
   font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 300;
   letter-spacing: 2px;
   color: var(--color-violet-soft);
@@ -323,7 +323,7 @@ body {
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 400;
   text-align: center;
   color: var(--color-text);
@@ -385,7 +385,7 @@ body {
 
 .countdown-number {
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-size: clamp(2.5rem, 5.5vw, 3.5rem);
   font-weight: 600;
   color: var(--color-violet-deep);
   line-height: 1;
@@ -393,7 +393,7 @@ body {
 
 .countdown-label {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -455,14 +455,14 @@ body {
 }
 
 .detail-icon {
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   margin-bottom: 16px;
   filter: grayscale(0.1);
 }
 
 .detail-title {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: var(--color-violet-deep);
   margin-bottom: 10px;
@@ -470,14 +470,14 @@ body {
 }
 
 .detail-text {
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 500;
   color: var(--color-text);
   margin-bottom: 4px;
 }
 
 .detail-subtext {
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: var(--color-text-light);
   font-weight: 300;
 }
@@ -487,7 +487,7 @@ body {
   margin-top: 16px;
   padding: 10px 22px;
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 1px;
   color: var(--color-white);
@@ -915,7 +915,7 @@ body {
 
 .footer-names {
   font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
   font-weight: 400;
   color: var(--color-white);
   margin-bottom: 8px;
@@ -924,7 +924,7 @@ body {
 
 .footer-date {
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 4px;
   color: var(--color-gold);
@@ -932,7 +932,7 @@ body {
 }
 
 .footer-text {
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 300;
   color: var(--color-violet-soft);
   margin-bottom: 20px;
@@ -940,7 +940,7 @@ body {
 
 .footer-hearts {
   color: var(--color-gold);
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 10px;
 }
 
